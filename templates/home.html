@@ -13,15 +13,36 @@
   </head>
   <body>
     <div class="container">
-    <h1 class="text-center mt-2 mb-4">devNext Careers</h1>
+    <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
     <img class= "img-fluid" id="banner" src= " https://jovian-careers-website--rrkattimani47.repl.co/static/banner.jpeg"> 
     <h2 class="text-center">About devNext</h2>
     <p class="lead">devNext v3.8.0 is a Workspace Management Tool which helps developers to quickly setup and manage different projects in a single machine. All the configuration happens through an INI file and access to all the workspaces is centralized.</p>
     <h2 class="text-center mt-2 mb-4">Open Positions</h2>
-    <p>To Do - Show Jobs Here</p>
+      <div>
+      {%for job in jobs%}
+        <div style="margin-bottom:16px"
+      <div>
+        <h4 
+          style="color:rgb(120,120,120);
+          margin-bottom:4px;">{{job['title']}}
+        </h4>
+        {{job['title']}}</div>
+      <div>
+        <b>Location:</b>{{job['location']}}
+      </div>
+          {% if 'salary' in job %}}
+          <div><b>Salary:</b>{{job['salary']}}
+          </div>
+          {% endif %}
+      </div>
+        </div>
+          {% endfor %}
+    
+          
+
 <div class="text-center">
   <button class="btn btn-primary btn-lg">Contact Us</button>
-  <p class=mt-4>Copyright 2023, devNext</p> 
+  <p class=mt-4>Copyright 2023, Visteon</p> 
     </div>
     
   </body>
